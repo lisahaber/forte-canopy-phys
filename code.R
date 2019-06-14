@@ -169,3 +169,19 @@ power.anova.test(groups = 3, n = 24,
 # tree box plot
 boxplot(MeanPhotoTree ~ Species, data = amax2)
 
+###################################################
+# Jeff's suggested code
+amax %>%
+  group_by(Species) %>%
+  summarise(amax_mu = mean(MeanPhoto)) -> species.means
+
+sample.sd <- sd(amax$MeanPhoto)
+
+p <- power.anova.test(groups = 3,
+                      within.var = var(species.means$amax_mu),
+                      between.var = sample.sd,
+                      sig.level = 0.05, power = 0.8, n = NULL)
+#solve for n
+#you can change the power to whatever
+this gets like 21?
+
