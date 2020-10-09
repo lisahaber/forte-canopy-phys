@@ -1,0 +1,62 @@
+Title, Color, Formula, Category, Notes
+ARI1, #FF0000,(1/W550) - (1/W700), Leaf Pigments, The value of this index ranges from 0 to more than 0.2. The common range for green vegetation is 0.001 to 0.1. 
+ARI2, #FF0000,W800 * ((1/W550) - (1/W700)), Leaf Pigments, The value of this index ranges from 0 to more than 0.2. The common range for green vegetation is 0.001 to 0.1. 
+CRI1, #FFFF00,(1/W510) - (1/W550), Leaf Pigments, The value of this index ranges from 0 to more than 15. The common range for green vegetation is 1 to 12. 
+CRI2, #FFFF00,(1/W510) - (1/W700), Leaf Pigments, The value of this index ranges from 0 to more than 15. The common range for green vegetation is 1 to 11. 
+SIPI, #8B0000,(W800 - W445) / (W800 + W680), Leaf Pigments, The value of this index ranges from 0 to 2. The common range for green vegetation is 0.8 to 1.8.  Peñuelas et al. (1995)
+FRI, #FFFF00,(1/W410 - 1/W460) * W800, Leaf Pigments, None
+CNDVI, #008000,(W750 - W705) / (W750 + W705), Uncategorized, The value of this index ranges from -1 to 1. The common range for green vegetation is 0.2 to 0.8.
+Ctr1, #FF0000,W695 / W420, Uncategorized, Carter (1994)
+Ctr2, #FF0000,W695 / W760, Uncategorized, Carter et al. (1996)
+G, #008000,W554 / W677, Uncategorized, None
+GM1, #FF0000,W750/ W550, Uncategorized, Gitelson & Merzlyak (1997)
+GM2, #FF0000,W750/ W700, Uncategorized, Gitelson & Merzlyak (1997)
+Lic1, #FF0000,(W800 - W680) / (W800 + W680), Uncategorized, Lichtenthaler et al. (1996)
+Lic2, #FF0000,W440 / W690, Uncategorized, Lichtenthaler et al. (1996)
+NDVI, #008000,(W800 - W680) / (W800 + W680), Uncategorized, The value of this index ranges from -1 to 1. The common range for green vegetation is 0.2 to 0.8.
+NPCI, #FF0000,(W680 - W430) / (W680 + W430), Uncategorized, Peñuelas et al. (1994)
+NPQI, #FFFF00,(W415 - W435) / (W415 + W435), Uncategorized, Barnes et al. (1992)
+SRPI, #FFA500,W430 / W680, Uncategorized, Peñuelas et al. (1995)
+TCARI, #FF0000,3 * ((W700- W670) - 0.2 * (W700 - W550) * (W700 / W670)), Uncategorized, Haboudane et al. (2002)
+TVI, #008000,0.5 * (120 * (W750- W550) - 200 * (W670- W550)), Uncategorized, Broge and Leblanc (2000)
+ZMI, #FF0000,W750 / W710, Uncategorized, Zarco-Tejada et al. (2001)
+MRESRI, #008000,(W705 - W445) / (W705 / W455), Narrowband Greenness, The value of this index ranges from 0 to 30. The common range for green vegetation is 2 to 8. 
+RENDVI, #8B0000,(W750 - W705) / (W750 + W705), Narrowband Greenness, The value of this index ranges from -1 to 1. The common range for green vegetation is 0.2 to 0.9.
+VREI1, #8B0000,W740 / W720, Narrowband Greenness, The value of this index ranges from 0 to 20. The common range for green vegetation is 4 to 8. 
+VREI2, #8B0000,(W734 - W747) / (W715 + W726), Narrowband Greenness, The value of this index ranges from 0 to 20. The common range for green vegetation is 4 to 8. 
+VREI3, #8B0000,(W734 - W747) / (W715 + W720), Narrowband Greenness, The value of this index ranges from 0 to 20. The common range for green vegetation is 4 to 8. 
+PRI, #ADFF2F,(W531 - W570) / (W531 + W570), Light Use Efficiency, The value of this index ranges from -1 to 1. The common range for green vegetation is -0.2 to 0.2.  Gamon et al. (1992)
+PSRI, #8B0000,(W680 - W500) / W750, Dry or Senescent Carbon, The value of this index ranges from -1 to 1. The common range for green vegetation is -0.1 to 0.2. 
+WBI, #0000FF,(W900 / W970), Canopy Water Content, The common range for green vegetation is 0.8 to 1.2.  Peñuelas et al. (1997)
+
+
+Layer, Calculation, Value
+Layer 1, ARI1, 0.007484016
+Layer 1, ARI2, 0.7484016
+Layer 1, CRI1, 0.04464234
+Layer 1, CRI2, 0.05212636
+Layer 1, SIPI, 0.7532287
+Layer 1, FRI, -2.734971
+Layer 1, CNDVI, 0.3552445
+Layer 1, Ctr1, 0.903855
+Layer 1, Ctr2, 0.2129246
+Layer 1, G, 3.15643
+Layer 1, GM1, 3.724049
+Layer 1, GM2, 2.975647
+Layer 1, Lic1, 0.8436341
+Layer 1, Lic2, 1.744285
+Layer 1, NDVI, 0.8436341
+Layer 1, NPCI, -0.4231447
+Layer 1, NPQI, 0.1493608
+Layer 1, SRPI, 2.467074
+Layer 1, TCARI, 59.68227
+Layer 1, TVI, 6261.521
+Layer 1, ZMI, 1.620897
+Layer 1, MRESRI, 11.18899
+Layer 1, RENDVI, 0.3552445
+Layer 1, VREI1, 1.106433
+Layer 1, VREI2, 0
+Layer 1, VREI3, 0
+Layer 1, PRI, 0.09018461
+Layer 1, PSRI, -0.0240454
+Layer 1, WBI, 1

@@ -231,14 +231,17 @@ for (i in 1:nrow(df)) {
 #look at output
 table(df$fate)
 
-ggplot(data = df, aes(x = Longitude, y = Latitude, size = (dbh), color = genus, shape = fate)) +
+ggplot(data = df, aes(x = Longitude, y = Latitude, size = (dbh), color = genus, shape = fate, label = Tag)) +
   geom_point(alpha = 1)+
   scale_colour_manual(values=cbbPalette, limits = levels(stem$genus))+
   scale_shape_manual(values=c(1, 19))+
+  geom_text()+
   # geom_text(aes(label=Nr),hjust=0, vjust=0)+
   # guides(fill=FALSE, alpha=FALSE, size=FALSE)+
   ggtitle("D02 - 85%")+
   theme_classic()
+
+
 
 ##################
 message("D02E, 85%, Bottom-Down")
