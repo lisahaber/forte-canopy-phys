@@ -78,19 +78,38 @@ z %>%
   as_tibble %>%
   separate(filename, into = c("Focal_Tree", "Leaf_Sample", "Filename_date", "CID_Gibberish"),
            remove = FALSE) %>%
-  data.frame() ->   indices
+  as.data.frame() ->   indices
 
 # filter
 indices %>%
-  select(-filename, -Layer, -CID_Gibberish) %>%
+  dplyr::select(-filename, -Layer, -CID_Gibberish) %>%
   data.frame() -> indices
 
 # replace all nonalphanumeric characters
 indices$Value <- gsub("[^0-9.-]", NA, indices$Value)
 
+# graphing raw data for NDVI
+indices$Value <- as.numeric(indices$Value)
+
+ndvi_2020 <- indices %>%
+  filter(Calculation == "NDVI") %>%
+  dplyr::select(Focal_Tree, Calculation, Value) %>%
+  group_by(Focal_Tree) %>%
+  summarize(mean_NDVI = mean(Value, na.rm = TRUE))
+
+write.csv(ndvi_2020, "ndvi_tree_means_2020.csv", row.names = FALSE)
 
 
+##### graphing 2019 and 2020 ndvi together for exploration
+ndvi_1 <- read.csv("ndvi_tree_means_2019.csv")
+ndvi_2 <- read.csv("ndvi_tree_means_2020.csv")
+NDVI_combined <- bind_rows(ndvi_1, ndvi_2)
 
+NDVI_combined$Year <- as.factor(NDVI_combined$Year)
+
+ndvi_g <- NDVI_combined %>%
+  ggplot(aes(x = Focal_Tree, y = mean_NDVI)) +
+  geom_point(aes(color = Year))
 
 
 
@@ -131,11 +150,18 @@ refdata %>%
 #df <- left_join(specdata, refdata)
 
 
+#####################################
+## Looking at PRI 
 
+pri_2020 <- indices %>%
+  filter(Calculation == "PRI") %>%
+  dplyr::select(Focal_Tree, Calculation, Value) %>%
+  group_by(Focal_Tree) %>%
+  summarize(mean_PRI = mean(Value, na.rm = TRUE))
 
-
-
-
+pri_g <- pri_2020 %>%
+  ggplot(aes(x = Focal_Tree, y = mean_PRI)) +
+  geom_point()
 
 
 
